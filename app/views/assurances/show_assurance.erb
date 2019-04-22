@@ -1,0 +1,13 @@
+
+<p><%= @assurance.owner %> <p>
+<p><%= @assurance.phone %> <p>
+<p><%= @assurance.model %> <p>
+<p><%= @assurance.immatriculation %> <p>
+<p><%= @assurance.color %> <p>
+
+<form method="post" action="/assurances/<%=@assurance.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Assurance">
+</form>
+
+<a href="/assurences/<%=@assurance.id%>/edit">Edit Assurance </a>

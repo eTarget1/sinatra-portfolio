@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Assurance Mobile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+      .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: blue;
+      color: white;
+      text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/"><i class="fa fa-paperclip"></i> Assurance Mobile</a>
+      <ul class="nav navbar-nav">
+
+        <% if logged_in? %>
+        <li><a href="/assurances/new">Create New Assurance</a></li>
+        <li><a href="/logout">Log Out</a></li>
+
+        <% else %>
+        <li><a href="/login">Log In</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">contact</a></li>
+
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="col-md-6 col-xs-offset-2">
+
+  <%= yield %> 
+  <div class="footer">
+  <p>&copy; <%= Time.new.year %> Assurance mobile App!</p>
+  </div>
+  </body>
+</html>

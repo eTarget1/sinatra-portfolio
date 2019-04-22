@@ -1,0 +1,13 @@
+
+<p> Welcome <%= current_user.username %> !
+<h2> Your current assurance mobile:</h2>
+
+<% @assurances.each do |assurance| %>
+  <div>
+    <%= assurance.owner %>
+    <%= assurance.phone %>
+    <%= assurance.model %>
+    <%= assurance.immatriculation %>
+    <%= assurance.color %>
+  </div>
+<% end %>

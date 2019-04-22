@@ -1,0 +1,11 @@
+<h2> Edit Assurance </h2>
+
+<form method="post" action="/assurances/<%=@assu.id%>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <input type="text" name="owner" value="<%= @assu.owner %>">
+  <input type="integer" name="phone" value="<%= @assu.phone %>">
+  <input type="text" name="model" value="<%= @assu.model %>">
+  <input type="text" name="immatriculation" value="<%= @assu.immatriculatio %>">
+  <input type="text" name="color" value="<%= @assu.color %>">
+  <input type="submit" value="submit">
+</form>
