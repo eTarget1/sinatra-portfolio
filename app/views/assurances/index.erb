@@ -2,12 +2,16 @@
 <p> Welcome <%= current_user.username %> !
 <h2> Your current assurance mobile:</h2>
 
-<% @assurances.each do |assurance| %>
+<% @assurances.each.with_index(1) do |assurance, index| %>
   <div>
-    <%= assurance.owner %>
-    <%= assurance.phone %>
-    <%= assurance.model %>
-    <%= assurance.immatriculation %>
-    <%= assurance.color %>
-  </div>
+  <%= index %>
+    <h3>Name: <%= assurance.owner %></h3>
+    <p>Phone: <%= assurance.phone %></p>
+    <p>Model: <%= assurance.model %></p>
+    <p>Immatriculation: <%= assurance.immatriculation %></p>
+    <p>Color: <%= assurance.color %></p>
+    </div>
 <% end %>
+<a href="/assurances/new"><button type="button" class="btn btn-default">Create A New Assurance</button></a>
+
+

@@ -1,7 +1,9 @@
 class AssuranceController < ApplicationController
     get '/assurances' do
+      binding.pry
         if logged_in?
-        @tweets = Assurance.all
+        #@user =curent_user
+        @assurances = Assurance.all
         erb :'/assurances/index'
         else
           redirect '/login'
@@ -19,7 +21,7 @@ class AssuranceController < ApplicationController
       get '/assurances/:id' do
         if logged_in?
         @assurance = Assurance.find(params[:id])
-        erb :'/assurances/show'
+        erb :'/assurances/show_assurance'
         else
           redirect '/login'
         end
@@ -42,6 +44,7 @@ class AssuranceController < ApplicationController
             @assurance = Assurance.create(:owner=> params[:owner], :phone=> params[:phone], :model=> params[:model], :immatriculation=> params[:immatriculation], :color => params[:color])
             @assurance.user_id = current_user.id
             @assurance.save
+            redirect "/assurances/#{id}"
           end
         end
       end

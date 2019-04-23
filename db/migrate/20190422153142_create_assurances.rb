@@ -6,6 +6,7 @@ class CreateAssurances < ActiveRecord::Migration
       t.string :model
       t.string :immatriculation
       t.string :color
+      #t.integer :user_id
       t.timestamps null: false
     end
   end
