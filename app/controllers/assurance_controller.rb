@@ -1,6 +1,6 @@
 class AssuranceController < ApplicationController
     get '/assurances' do
-      binding.pry
+      #binding.pry
         if logged_in?
         #@user =curent_user
         @assurances = Assurance.all
@@ -44,7 +44,7 @@ class AssuranceController < ApplicationController
             @assurance = Assurance.create(:owner=> params[:owner], :phone=> params[:phone], :model=> params[:model], :immatriculation=> params[:immatriculation], :color => params[:color])
             @assurance.user_id = current_user.id
             @assurance.save
-            redirect "/assurances/#{id}"
+            redirect "/assurances/#{@assurance.id}"
           end
         end
       end
@@ -59,7 +59,7 @@ class AssuranceController < ApplicationController
         redirect '/assurances'
       end
     
-      patch '/assurances/:id/edit' do
+      patch '/assurances/:id' do
         if logged_in?
         @assurance = Assurance.find(params[:id])
         @assurance.owner = params[:owner]
@@ -68,6 +68,7 @@ class AssuranceController < ApplicationController
         @assurance.immatriculation = params[:immatriculation]
         @assurance.color = params[:color]
         @assurance.save
+        redirect "/assurances/#{@assurance.id}"
       end
     end    
    

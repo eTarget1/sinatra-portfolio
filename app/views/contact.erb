@@ -1,0 +1,25 @@
+<div class="container">
+  
+ <h2>Contact Us</h2>
+ <p> Leave us a message:</p>
+  
+
+    <form action="/contact" method="POST">
+
+    <label for="POST-fullname">Fullname</label>
+    <input id="fullname" type="text" name="contact[fullname]">
+    <br/>
+    <label for="POST-phone">Phone Number:</label>
+    <input id="phone" type="text" name="contact[phone]">
+    <br/>
+    <label for="POST-email">E-mail:</label>
+    <input id="email" type="text" name="contact[email]">
+    <br/>
+    <label for="POST-message">Message:</label>
+    <textarea id="message" name="contact[message]"></textarea>
+
+    <!--<input id="message" type="text" name="contact[message]">--!>
+    <br/>
+    <button type="submit" value="Submit">Submit!</button>
+    </form>
+</div>
