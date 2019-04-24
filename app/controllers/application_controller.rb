@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
     erb :about
   end
   get '/contact' do
-    erb :contact
+    erb :contact     
   end
 
   helpers do
