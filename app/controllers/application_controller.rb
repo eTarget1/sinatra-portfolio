@@ -15,10 +15,10 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/about' do
-    "Hello World"
+    erb :about
   end
   get '/contact' do
-    # erb :contact
+    erb :contact
   end
 
   helpers do

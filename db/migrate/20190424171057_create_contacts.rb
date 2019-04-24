@@ -9,4 +9,3 @@ class CreateContacts < ActiveRecord::Migration
   end
 end
 
-
