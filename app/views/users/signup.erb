@@ -1,15 +1,24 @@
+<h3>Sign Up</h3> <br>
+    <div class="container">
+    <form action="/signup" method="post">
+        <div class="form-group">
+        <label for="username">Username: </label>
+        <input type="text" name="username" value=""><br>
+        </div>
 
-<form action="/signup" method="post">
+        <div class="form-group">
+        <label for="email">Email: </label>
+        <input type="text" name="email"><br>
+        </div>
 
-<label for="username">Username: </label>
-<input type="text" name="username" value=""><br>
+    <div class="form-group">
+        <label for="password">Password: </label>
+        <input type="password" name="password"><br>
+    </div>
+    <input type="submit" name="" value="Submit"> 
 
-<label for="email">Email: </label>
-<input type="text" name="email"><br>
+    </form>
+</div>
 
-<label for="password">Password: </label>
-<input type="text" name="password"><br>
-
-<input type="submit" name="" value="Submit"> 
-
-</form>
+<br>
+<p>Or you can <a href="/login">log in here.</a></p>
