@@ -2,10 +2,10 @@
 <h4>Nane: <%= @assurance.owner %> </h4>
 <h4>Phone: <%= @assurance.phone %> </h4>
 <h4>Model: <%= @assurance.model %> </h4>
-<h4>Immatriculation<%= @assurance.immatriculation %> </h4>
+<h4>Immatriculation: <%= @assurance.immatriculation %> </h4>
 <h4>Color<%= @assurance.color %> </h4>
 
-<form method="post" action="/assurances/<%=@assurance.id%>/delete">
+<form method="post" action="/assurances/<%=@assurance.id%>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Assurance">
 </form>

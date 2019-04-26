@@ -20,7 +20,8 @@ class AssuranceController < ApplicationController
     
       get '/assurances/:id' do
         if logged_in?
-        @assurance = Assurance.find(params[:id])
+        @assurance = Assurance.find_by(id: params[:id])
+        redirect '/assurances' unless @assurance
         erb :'/assurances/show_assurance'
         else
           redirect '/login'
@@ -41,17 +42,18 @@ class AssuranceController < ApplicationController
           if params[:owner] == "" || params[:phone]== "" || params[:model] == "" || params[:immatriculation]== "" || params[:color] == ""
             redirect '/assurances/new'
           else
-            @assurance = Assurance.create(:owner=> params[:owner], :phone=> params[:phone], :model=> params[:model], :immatriculation=> params[:immatriculation], :color => params[:color])
-            @assurance.user_id = current_user.id
-            @assurance.save
+            @assurance = current_user.assurances.create(:owner=> params[:owner], :phone=> params[:phone], :model=> params[:model], :immatriculation=> params[:immatriculation], :color => params[:color])
+            # @assurance = Assurance.create(:owner=> params[:owner], :phone=> params[:phone], :model=> params[:model], :immatriculation=> params[:immatriculation], :color => params[:color])
+            # @assurance.user_id = current_user.id
+            # @assurance.save
             redirect "/assurances/#{@assurance.id}"
           end
         end
       end
     
-      delete '/assurances/:id/delete' do
+      delete '/assurances/:id' do
         if logged_in?
-        @assurance = Assurance.find_by(params[:id])
+        @assurance = Assurance.find_by(id: params[:id])
         @assurance.delete
         else
           redirect '/login'
